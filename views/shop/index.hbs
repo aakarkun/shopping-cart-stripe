@@ -1,0 +1,24 @@
+<div class="uk-grid">
+    <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-4-5 uk-container-center">
+        <div id="success" class="uk-alert uk-alert-success uk-margin-top {{# if noMessages}}hidden{{/if}}">
+            <a href=""class="uk-alert-close uk-close"></a>
+            <p>{{ successMsg }}</p>
+        </div>
+    </div>
+</div>
+
+{{# each products }}
+    <div class="uk-grid">
+        {{# each this }}
+            <div class="uk-width-small-1-2 uk-width-medium-1-4 uk-width-large-1-4">
+                <div class="uk-thumbnail uk-thumbnail-medium uk-margin-large-top">
+                    <img src="{{ this.imagePath }}" class="uk-margin-small-bottom" alt="">
+                    <a href="" class="uk-text-large">{{ this.title }}</a>
+                    <p class="uk-text-muted uk-margin-small-top uk-margin-small-bottom">{{ this.description }}</p>
+                    <div class="price uk-float-left">${{ this.price }}</div>
+                    <a href="/add-to-cart/{{ this._id }}" class="uk-button uk-button-success uk-float-right">Add to cart</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/each}}

@@ -1,0 +1,21 @@
+<div class="uk-grid">
+    <div class="uk-width-medium-3-5 uk-container-center uk-margin-large-top">
+        <form action="/user/signin" method="post" class="uk-form uk-margin-bottom">
+            <legend>Sign in</legend>
+            {{#if hasError}}
+                <div class="uk-alert uk-alert-danger" data-uk-alert>
+                    <a href="" class="uk-alert-close uk-close"></a>
+                    {{#each messages}}
+                        <p>{{ this }}</p>
+                    {{/each}}
+                </div>
+            {{/if}}
+            <input type="text" id="email" name="email" placeholder="email" class="uk-margin-small-top"><br />
+            <input type="password" id="password" name="password" placeholder="Password input" class="uk-margin-small-top"><br />
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button class="uk-button uk-button-primary uk-margin-top">Sign in</button>
+        </form>
+        <p>Don't have an account? <a href="/user/signup">Sign up</a> instead!</p>
+    </div>
+
+</div>

@@ -1,0 +1,37 @@
+<nav class="uk-navbar">
+    <a href="/" class="uk-navbar-brand">Twin Tees</a>
+    <ul class="uk-navbar-nav">
+        <li class=""><a href="">Categories</a></li>
+        <li><a href="">Item</a></li>
+        <li><a href="">Mens</a></li>
+        <li><a href="">Womens</a></li>
+    </ul>
+    <div class="uk-navbar-flip">
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="/shopping-cart">
+                    <i class="uk-icon-shopping-cart"></i> Shopping Cart
+                    <span class="badge">{{session.cart.totalQty}}</span>
+                </a>
+            </li>
+            <li class="uk-parent" data-uk-dropdown="" aria-haspopup="true" aria-expanded="false">
+                <a href=""><i class="uk-icon-user"></i> User Management <i class="uk-icon-caret-down"></i></a>
+                <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom">
+                    <ul class="uk-nav uk-nav-navbar">
+                        {{# if login }}
+                            <li><a href="/user/profile"><i class="uk-icon-cogs"></i> User Account</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="/user/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                        {{ else }}
+                            <li><a href="/user/signup"><i class="uk-icon-user-plus"></i> Sign up</a></li>
+                            <li><a href="/user/signin"><i class="fa fa-lock" aria-hidden="true"></i> Sign in</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+
+    </div>
+
+</nav>

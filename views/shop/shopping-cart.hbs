@@ -1,0 +1,44 @@
+<div class="uk-margin-large-top">
+    {{# if products }}
+        <div class="uk-grid">
+            <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-4-5 uk-container-center">
+                <ul class="uk-list uk-list-line uk-list-space">
+                    {{# each products }}
+                        <li>
+                            <span class="badge pull-right">{{ this.qty }}</span>
+                            <span class="uk-text-medium uk-text-bold uk-margin-top uk-margin-bottom">{{ this.item.title }}</span>
+                            <span class="uk-badge uk-badge-success uk-badge-notification uk-text-contrast ">${{ this.price }}</span>
+                            <div class="uk-button-dropdown" data-uk-dropdown>
+                                <button class="uk-button" type="button">Action <i class="uk-icon-caret-down"></i></button>
+                                <div class="uk-dropdown uk-dropdown-small">
+                                    <ul class="uk-nav uk-nav-dropdown">
+                                        <li><a href="/reduce/{{ this.item._id }}">Reduce by 1</a></li>
+                                        <li><a href="">Remove all</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    {{/each }}
+                </ul>
+            </div>
+        </div>
+        <div class="uk-grid">
+            <div class="uk-width-small-1-2 uk-width-medium-1-4 uk-width-large-1-4">
+                <strong>Total: ${{ totalPrice }}</strong>
+            </div>
+        </div>
+        <hr>
+        <div class="uk-grid">
+            <div class="uk-width-small-1-2 uk-width-medium-1-4 uk-width-large-1-4">
+                <a href="/checkout" class="uk-button uk-button-success">Check out</a>
+            </div>
+        </div>
+    {{ else }}
+        <div class="uk-grid">
+            <div class="uk-width-small-1-1 uk-width-medium-4-5 uk-width-large-3-5 uk-container-center">
+                <h1>No Items in Cart</h1>
+            </div>
+        </div>
+    {{/if}}
+</div>
+

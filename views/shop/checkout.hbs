@@ -1,0 +1,60 @@
+<div class="uk-margin-medium-top">
+    <div class="uk-grid">
+        <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-4-5 uk-container-center">
+            <h1>Checkout</h1>
+            <h4>Total: $ {{ total }}</h4>
+            <div id="charge-error" class="uk-alert uk-alert-danger {{# if noError}}hidden{{/if}}" data-uk-alert>
+                <a href="" class="uk-alert-close uk-close"></a>
+                <p>{{errMsg}}</p>
+            </div>
+            <form action="/checkout" method="post" class="uk-form uk-form-stacked" id="checkout-form">
+                <div class="uk-form-row">
+                    <label class="uk-form-label" for="name">Full Name</label>
+                    <div class="uk-form-controls">
+                        <input type="text" id="name" class="uk-form-width-large" placeholder="full name" required name="name">
+                    </div>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label" for="address">Address</label>
+                    <div class="uk-form-controls">
+                        <input type="text" id="address" class="uk-form-width-large" placeholder="address" required name="address">
+                    </div>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label" for="card-name">Card Holder Name</label>
+                    <div class="uk-form-controls">
+                        <input type="text" id="card-name" class="uk-form-width-large" placeholder="card holder name" required>
+                    </div>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label" for="card-number">Credit Card Number</label>
+                    <div class="uk-form-controls">
+                        <input type="text" id="card-number" class="uk-form-width-large" placeholder="credit card number" required>
+                    </div>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label" for="card-expiry-month">Expiration Month</label>
+                    <div class="uk-form-controls">
+                        <input type="text" id="card-expiry-month" class="uk-form-width-large" placeholder="card expiry month" required>
+                    </div>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label" for="card-expiry-year">Expiration Year</label>
+                    <div class="uk-form-controls">
+                        <input type="text" id="card-expiry-year" class="uk-form-width-large" placeholder="card expiry year" required>
+                    </div>
+                </div>
+                <div class="uk-form-row">
+                    <label class="uk-form-label" for="card-cvc">CVC</label>
+                    <div class="uk-form-controls">
+                        <input type="text" id="card-cvc" class="uk-form-width-large" placeholder="cvc" required>
+                    </div>
+                </div>
+                <button type="submit" class="uk-button uk-button-success uk-margin-top uk-margin-large-bottom">Buy now</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="javascripts/checkout.js"></script>
