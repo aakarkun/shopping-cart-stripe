@@ -1,6 +1,6 @@
 # Shopping Site
 Simple shopping site using Express - Nodejs on MongoDB Server that uses Stripe API for Payment processing.
-This is developed for learning purpose only.
+> This is developed for learning purpose only.
 
 
 ### Manual Installation
