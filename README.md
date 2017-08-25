@@ -8,6 +8,9 @@ Simple shopping site using Express - Nodejs on MongoDB Server that uses Stripe A
 2. Clone the repository and check out the master branch: `> git clone https://github.com/aakarkun/shopping-cart-stripe`
 3. Enter the repository: `> cd ~/shopping-cart-stripe`
 4. Install and run the app: `> npm install && npm start`
+5. Keep in mind that you have to run your MongoDB Server.
+
+Read Mongo DB Documentation > <a href="https://docs.mongodb.com/">here</a> 
 
 ### For update
 If you want to update your app to the latest version, use your terminal to go to your app folder and type the following command:
